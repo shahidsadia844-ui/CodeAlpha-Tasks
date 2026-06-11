@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .app-container {
+            max-width: 500px;
+            background: white;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background-color: #e4e6eb;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        
+        /* Flashcard Styling */
+        .flashcard {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px auto;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Quiz Styling */
+        .quiz-option {
+            display: block;
+            width: 100%;
+            background: #f8f9fa;
+            border: 2px solid #ced4da;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+        }
+        .quiz-option:hover { background: #e9ecef; }
+        
+        button.action-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #score-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <h2>Language Learner Pro 🌍</h2>
+    <p>Learn Spanish Vocabulary & Test Your Progress</p>
+    
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('lessons')">Daily Lessons</button>
+        <button class="tab-btn" onclick="switchTab('quiz')">Practice Quiz</button>
+    </div>
+
+    <!-- Section 1: Daily Lessons (Flashcards) -->
+    <div id="lessons-section" class="content-section active">
+        <h3>Tap the card to flip between Spanish & English:</h3>
+        <div class="flashcard" id="card" onclick="flipCard()">Hola</div>
+        <p style="color: #666; font-size: 14px;">(Click to see translation)</p>
+        <button class="action-btn" onclick="nextCard()">Next Word →</button>
+    </div>
+
+    <!-- Section 2: Practice Quiz -->
+    <div id="quiz-section" class="content-section">
+        <h3>Choose the correct translation:</h3>
+        <div id="quiz-card">
+            <h4 id="question-text">What does "Gracias" mean?</h4>
+            <button class="quiz-option" onclick="checkAnswer(this, false)">Hello</button>
+            <button class="quiz-option" onclick="checkAnswer(this, true)">Thank you</button>
+            <button class="quiz-option" onclick="checkAnswer(this, false)">Goodbye</button>
+        </div>
+        <br>
+        <div id="score-text">Score: 0</div>
+    </div>
+</div>
+
+<script>
+    // Mock Data for Learning Vocabulary
+    const vocabulary = [
+        { spanish: "Hola", english: "Hello" },
+        { spanish: "Gracias", english: "Thank you" },
+        { spanish: "Adiós", english: "Goodbye" },
+        { spanish: "Por favor", english: "Please" },
+        { spanish: "Amigo", english: "Friend" }
+    ];
+
+    let currentCardIndex = 0;
+    let isShowingSpanish = true;
+    let score = 0;
+
+    // Tab Switching Logic
+    function switchTab(tabName) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+        
+        if(tabName === 'lessons') {
+            document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            document.getElementById('lessons-section').classList.add('active');
+        } else {
+            document.querySelectorAll('.tab-btn')[1].classList.add('active');
+            document.getElementById('quiz-section').classList.add('active');
+            generateQuizQuestion();
+        }
+    }
+
+    // Flashcard Logic
+    function flipCard() {
+        const card = document.getElementById('card');
+        if(isShowingSpanish) {
+            card.innerHTML = vocabulary[currentCardIndex].english;
+            card.style.background = "linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)";
+        } else {
+            card.innerHTML = vocabulary[currentCardIndex].spanish;
+            card.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+        }
+        isShowingSpanish = !isShowingSpanish;
+    }
+
+    function nextCard() {
+        currentCardIndex = (currentCardIndex + 1) % vocabulary.length;
+        isShowingSpanish = true;
+        const card = document.getElementById('card');
+        card.innerHTML = vocabulary[currentCardIndex].spanish;
+        card.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+    }
+
+    // Quiz Logic
+    function generateQuizQuestion() {
+        const questions = [
+            { q: 'What does "Adiós" mean?', options: [{t:'Cat', c:false}, {t:'Goodbye', c:true}, {t:'Please', c:false}] },
+            { q: 'What does "Amigo" mean?', options: [{t:'Friend', c:true}, {t:'Water', c:false}, {t:'Thank you', c:false}] },
+            { q: 'What does "Por favor" mean?', options: [{t:'Hello', c:false}, {t:'Welcome', c:false}, {t:'Please', c:true}] }
+        ];
+        
+        let randomQ = questions[Math.floor(Math.random() * questions.length)];
+        document.getElementById('question-text').innerHTML = randomQ.q;
+        
+        const optionsButtons = document.querySelectorAll('.quiz-option');
+        randomQ.options.forEach((opt, index) => {
+            optionsButtons[index].innerHTML = opt.t;
+            optionsButtons[index].onclick = function() { checkAnswer(opt.c); };
+            optionsButtons[index].style.background = "#f8f9fa";
+        });
+    }
+
+    function checkAnswer(isCorrect) {
+        if(isCorrect) {
+            alert("Correct Answer! 🎉");
+            score += 10;
+        } else {
+            alert("Wrong Answer! Try again. ❌");
+        }
+        document.getElementById('score-text').innerHTML = "Score: " + score;
+        generateQuizQuestion();
+    }
+</script>
+
+</body>
+  </html>
+
