@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translation Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        textarea {
+            width: 90%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        select, button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover { background-color: #218838; }
+        .copy-btn { background-color: #007bff; }
+        .copy-btn:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Translator Tool</h2>
+        
+        <select id="sourceLang">
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+        </select>
+        
+        <span>to</span>
+        
+        <select id="targetLang">
+            <option value="ur">Urdu</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+        </select>
+
+        <textarea id="inputText" placeholder="Type text here..."></textarea>
+        
+        <br>
+        <button onclick="translateText()">Translate</button>
+        <button class="copy-btn" onclick="copyText()">Copy Result</button>
+        <br>
+
+        <textarea id="outputText" placeholder="Translation will appear here..." readonly></textarea>
+    </div>
+
+    <script>
+        function translateText() {
+            let text = document.getElementById("inputText").value;
+            let src = document.getElementById("sourceLang").value;
+            let tgt = document.getElementById("targetLang").value;
+            
+            if(text.trim() === "") {
+                alert("Please enter some text!");
+                return;
+            }
+
+            // Using MyMemory API (Free, no key required for basic tasks)
+            let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${src}|${tgt}`;
+            
+            document.getElementById("outputText").value = "Translating...";
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("outputText").value = data.responseData.translatedText;
+                })
+                .catch(error => {
+                    document.getElementById("outputText").value = "Error in translation.";
+                });
+        }
+
+        function copyText() {
+            let translatedText = document.getElementById("outputText");
+            if(translatedText.value !== "" && translatedText.value !== "Translating...") {
+                translatedText.select();
+                navigator.clipboard.writeText(translatedText.value);
+                alert("Copied to clipboard!");
+            }
+        }
+    </script>
+
+</body>
+</html>
