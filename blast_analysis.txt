@@ -1,0 +1,25 @@
+======================================================
+NCBI BLAST ALIGNMENT ANALYSIS REPORT (TASK 1)
+======================================================
+
+1. QUERY SEQUENCE DETAILS
+- Target Molecule: Human Insulin Protein (INS)
+- Database Source: NCBI / UniProtKB
+- Sequence Length: 110 amino acids
+
+2. BLAST PROGRAM PARAMETERS
+- Program Used: BLASTp (Protein-Protein BLAST)
+- Database: Non-redundant protein sequences (nr)
+- Algorithm: blastp (standard protein BLAST)
+
+3. TOP HOMOLOGOUS HIT RESULTS (SUMMARY)
+- Max Score: 228 bits
+- Total Score: 228 bits
+- Query Cover: 100%
+- E-Value: 2e-78 (Highly significant alignment)
+- Percentage Identity: 100% (Match with Homo sapiens Insulin)
+
+4. ALIGNMENT METRICS DOCUMENTATION
+- Max Identity Percentage: 100% for human targets, dropping to 84.5% for porcine (pig) insulin targets.
+- Positives (Similarity): 100% similarity core matching.
+- Gaps Counter: 0% (Perfect continuous sequence match without structural insertions/deletions).
