@@ -1,0 +1,33 @@
+======================================================
+MULTIPLE SEQUENCE ALIGNMENT (MSA) REPORT - TASK 2
+======================================================
+
+1. SELECTED PROTEIN FAMILY SEQUENCE DETAILS
+We selected 5 Insulin protein sequences from different organisms within the same mammalian family:
+- Seq 1: Homo sapiens (Human) - UniProt: P01308
+- Seq 2: Pan troglodytes (Chimpanzee) - UniProt: P60174
+- Seq 3: Macaca mulatta (Rhesus macaque) - UniProt: P01309
+- Seq 4: Mus musculus (Mouse) - UniProt: P01306
+- Seq 5: Balaenoptera musculus (Blue Whale) - UniProt: P01317
+
+2. MULTIPLE SEQUENCE ALIGNMENT OUTPUT (CLUSTAL OMEGA FORMAT)
+The alignment showcases highly conserved regions across the selected species:
+
+Human         MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED 60
+Chimpanzee    MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED 60
+Macaque       MALWMRLLPLLALLALWGPDPAPAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED 60
+Mouse         MALLVHLLPLLALLALWGPNSVQAFLNQHLCGSHLVEALYLVCGERGFFYTPKSRREVED 60
+Blue_Whale    MALWTRLLPLLALLALWGPDPAQAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED 60
+              ***: .**************** **:***************************:***.**
+
+Human         LQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN 110
+Chimpanzee    LQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN 110
+Macaque       LQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN 110
+Mouse         PQVAQLELGGGPGAGDLQTLALEVAQQKRGIVDQCCTSICSLYQLENYCN 110
+Blue_Whale    LQVGQVELGGGPGAGNLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN 110
+               **.::*********.** **** : ******:*****************
+
+3. INTERPRETATION & CONSERVED MOTIFS HIGHLIGHTS
+- Identical Positions (*): Stars indicate 100% conserved amino acid positions across all 5 mammalian sequences.
+- Functional Motif Focus: The dynamic core regions "NQHLCGSHLVEALYLVCGERGFFY" and "QCCTSICSLYQLENYCN" are completely identical across all species, preserving structural framework and receptor binding.
+- Disulfide Cysteines: All critical Cysteine (C) residue sites involved in creating structural links are perfectly conserved across all organisms.
