@@ -30,3 +30,12 @@ A Python Flask backend system that handles upcoming event management and secure 
 - **Main Code File:** `event_app.py`
 - **Dependencies:** `requirements_event.txt`
 - 
+
+---
+
+## 🧬 TASK 1: DNA/Protein Sequence Analysis
+Bioinformatics analysis mapping homologous matching patterns across biological sequence databases.
+- **Target Sequence:** Human Insulin Protein extracted from NCBI/UniProt.
+- **Analysis Execution:** BLASTp alignment mapping to document genetic similarities.
+- **Documentation File:** `blast_analysis.txt` capturing max identity scores and evaluation metrics.
+- 
