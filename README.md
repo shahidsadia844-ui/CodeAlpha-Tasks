@@ -39,3 +39,12 @@ Bioinformatics analysis mapping homologous matching patterns across biological s
 - **Analysis Execution:** BLASTp alignment mapping to document genetic similarities.
 - **Documentation File:** `blast_analysis.txt` capturing max identity scores and evaluation metrics.
 - 
+
+---
+
+## 📅 TASK 2: Multiple Sequence Alignment
+Bioinformatics mapping that traces molecular similarities and variations across 5 distinct mammalian sequences.
+- **Protein Family:** Mammalian Insulin Family (Human, Chimpanzee, Macaque, Mouse, Blue Whale).
+- **Core Methodology:** Multiple Sequence Alignment executed via the Clustal Omega algorithm.
+- **Main Analysis File:** `msa_alignment.txt` documenting fully conserved active domains and cross-species structural links.
+- 
