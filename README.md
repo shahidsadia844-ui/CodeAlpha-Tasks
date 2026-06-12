@@ -20,3 +20,13 @@ A Python Flask backend application with SQLite integration to manage restaurant 
 - **Main Code File:** `restaurant_app.py`
 - **Dependencies:** `requirements_restaurant.txt`
 - 
+---
+
+## 📅 TASK 2: Event Registration System
+A Python Flask backend system that handles upcoming event management and secure user registration.
+- **Database Models:** Structure for Events data tracking and linked Registrations mapping.
+- **Logic Automations:** Submitting a registration form automatically subtracts 1 seat from the event's available seats counter.
+- **REST APIs:** Endpoints to view available events list (`GET /api/events`) and process user registration data (`POST /api/register`).
+- **Main Code File:** `event_app.py`
+- **Dependencies:** `requirements_event.txt`
+- 
