@@ -60,3 +60,20 @@ Yeh aik buniyaadi Solidity Smart Contract hai jo blockchain par aik integer valu
 3. Deploy & Run Transactions tab mein ja kar contract ko **Deploy** karein.
 4. Deploy hone ke baad `increment` aur `decrement` buttons par click kar ke check karein ke `storedValue` change ho rahi hai ya nahi.
 5. 
+
+# Task 4: Personal Portfolio (Crypto Locking) Smart Contract
+
+## Project Description
+Yeh aik advanced Solidity smart contract hai jo users ko apne Ether aik specific lock-in period ke liye secure karne ki ijazat deta hai. Yeh contract `block.timestamp` ka istemal karte hue security check lagata hai taake waqt se pehle koi bhi withdrawal na ho sake.
+
+## Key Features
+* **Secure Deposit:** User duration set kar ke Ether lock kar sakte hain.
+* **Time-Lock Enforcement:** `block.timestamp` ke zariye early withdrawal ko strictly block kiya jata hai.
+* **Mappings:** Har user ka balance aur unlock time securely map hota hai.
+
+## Testing on Remix IDE
+1. Code ko **remix.ethereum.org** par compile karein.
+2. Contract deploy karne ke baad `deposit` function mein `_lockDurationInSeconds` ko `60` (1 minute) dein aur `Value` mein 1 Ether likh kar transaction send karein.
+3. Agar aap 1 minute se pehle `withdraw` par click karenge toh transaction fail ho jayegi.
+4. 1 minute guzarne ke baad click karne par Ether aapke account mein wapas transfer ho jayenge.
+5. 
