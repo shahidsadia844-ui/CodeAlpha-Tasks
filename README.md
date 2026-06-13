@@ -48,3 +48,15 @@ Bioinformatics mapping that traces molecular similarities and variations across 
 - **Core Methodology:** Multiple Sequence Alignment executed via the Clustal Omega algorithm.
 - **Main Analysis File:** `msa_alignment.txt` documenting fully conserved active domains and cross-species structural links.
 - 
+
+# Task 1: Simple Storage Smart Contract
+
+## Project Description
+Yeh aik buniyaadi Solidity Smart Contract hai jo blockchain par aik integer value ko store karta hai. Is mein value ko barhane (increment) aur kam karne (decrement) ke functions mojood hain.
+
+## How to Test
+1. Is code ko **Remix IDE** (remix.ethereum.org) par copy-paste karein.
+2. Solidity Compiler tab mein ja kar ise **Compile** karein.
+3. Deploy & Run Transactions tab mein ja kar contract ko **Deploy** karein.
+4. Deploy hone ke baad `increment` aur `decrement` buttons par click kar ke check karein ke `storedValue` change ho rahi hai ya nahi.
+5. 
