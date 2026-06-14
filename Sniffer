@@ -1,0 +1,8 @@
+# Basic Network Sniffer
+
+This Python script captures and analyzes network packets using the Scapy library as part of the @CodeAlpha internship.
+
+## Features
+* Captures real-time network traffic.
+* Displays Source and Destination IP addresses.
+* Identifies TCP and UDP protocols.
