@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Account {
+public:
+    string accNum; double balance;
+    Account(string n, double b) { accNum = n; balance = b; }
+    void deposit(double amt) { balance += amt; cout << "Deposited: " << amt << endl; }
+};
+int main() {
+    Account acc("PK786", 5000);
+    acc.deposit(1500);
+    cout << "Total Balance: " << acc.balance << endl;
+    return 0;
+}
