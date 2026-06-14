@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    int num; double total_p = 0, total_c = 0;
+    printf("Total courses? "); scanf("%d", &num);
+    for(int i=0; i<num; i++) {
+        double g; int c;
+        printf("Course %d Grade & Credit Hours: ", i+1); scanf("%lf %d", &g, &c);
+        total_p += (g * c); total_c += c;
+    }
+    printf("Your CGPA is: %.2lf\n", total_p / total_c);
+    return 0;
+}
