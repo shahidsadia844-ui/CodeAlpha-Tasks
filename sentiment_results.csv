@@ -1,0 +1,56 @@
+Quote,Author
+“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”,Albert Einstein
+"“It is our choices, Harry, that show what we truly are, far more than our abilities.”",J.K. Rowling
+“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”,Albert Einstein
+"“The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.”",Jane Austen
+"“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”",Marilyn Monroe
+“Try not to become a man of success. Rather become a man of value.”,Albert Einstein
+“It is better to be hated for what you are than to be loved for what you are not.”,André Gide
+"“I have not failed. I've just found 10,000 ways that won't work.”",Thomas A. Edison
+“A woman is like a tea bag; you never know how strong it is until it's in hot water.”,Eleanor Roosevelt
+"“A day without sunshine is like, you know, night.”",Steve Martin
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import csv
+
+# 1. Fake Amazon Reviews ka Data (Text Data)
+reviews_data = [
+    {"Review": "I absolutely love this product! It works perfectly and saved my time.", "Product": "Wireless Mouse"},
+    {"Review": "Worst experience ever. The item arrived broken and customer service was rude.", "Product": "Headphones"},
+    {"Review": "It is an okay product. Nothing special, just does the basic job.", "Product": "Water Bottle"},
+    {"Review": "Amazing quality for the price. Highly recommended to everyone!", "Product": "Smart Watch"},
+    {"Review": "Very disappointed. It stopped working after just two days of use.", "Product": "Phone Charger"}
+]
+
+analyzer = SentimentIntensityAnalyzer()
+scraped_insights = []
+
+for item in reviews_data:
+    text = item["Review"]
+    
+    # VADER se sentiment score nikalna
+    vs = analyzer.polarity_scores(text)
+    compound = vs['compound'] 
+    
+    if compound >= 0.05:
+        sentiment = "Positive"
+    elif compound <= -0.05:
+        sentiment = "Negative"
+    else:
+        sentiment = "Neutral"
+        
+    scraped_insights.append({
+        "Product": item["Product"],
+        "Review": text,
+        "Sentiment": sentiment,
+        "Score": compound
+    })
+
+# 2. Final Result ko CSV dataset file mein save karna
+output_file = "sentiment_results.csv"
+with open(output_file, mode='w', newline='', encoding='utf-8') as file:
+    writer = csv.DictWriter(file, fieldnames=["Product", "Review", "Sentiment", "Score"])
+    writer.writeheader()
+    writer.writerows(scraped_insights)
+
+print(f"Success! Sentiment Analysis dataset saved as '{output_file}'")
