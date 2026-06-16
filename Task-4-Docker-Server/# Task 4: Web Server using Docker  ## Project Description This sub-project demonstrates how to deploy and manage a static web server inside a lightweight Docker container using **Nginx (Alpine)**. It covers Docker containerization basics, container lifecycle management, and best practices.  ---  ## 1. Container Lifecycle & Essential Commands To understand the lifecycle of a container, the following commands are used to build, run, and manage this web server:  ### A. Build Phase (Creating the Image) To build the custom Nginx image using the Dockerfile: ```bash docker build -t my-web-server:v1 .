@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Web Server</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        h1 { color: #333; }
+        .status { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Task 4: Web Server using Docker</h1>
+    <p>Status: <span class="status">Running smoothly inside an Nginx Container!</span></p>
+</body>
+</html>
+5. Page ke aakhiri mein ja kar **Commit changes** par click kar ke save kar dein.
+
+---
+
+### Step 2: Naya `Dockerfile` Banana (Folder Ke Andar)
+1. Ab aapki screen par `Task-4-Docker-Server` folder khula hoga. Agar nahi khula, toh repository ke main page par ja kar is folder par click karein.
+2. Folder ke andar rehte hue **Add file** ➔ **Create new file** par click karein.
+3. Is baar file name mein likhein: `Dockerfile`
+4. Content mein yeh Docker configuration dalein:
+   ```dockerfile
+   # 1. Base image ke taur par Nginx Alpine use kar rahe hain (Best Practice)
+   FROM nginx:alpine
+
+   # 2. Apni index.html file ko Nginx ke default directory mein copy karna
+   COPY index.html /usr/share/nginx/html/
+
+   # 3. Port 80 ko expose karna
+   EXPOSE 80b
+   # Task 4: Web Server using Docker
+
+## Project Description
+This sub-project demonstrates how to deploy and manage a static web server inside a lightweight Docker container using **Nginx (Alpine)**. It covers Docker containerization basics, container lifecycle management, and best practices.
+
+---
+
+## 1. Container Lifecycle & Essential Commands
+To understand the lifecycle of a container, the following commands are used to build, run, and manage this web server:
+
+### A. Build Phase (Creating the Image)
+To build the custom Nginx image using the Dockerfile:
+```bash
+docker build -t my-web-server:v1 .
+B. Run Phase (Deployment)
+To run the container in the background (detached mode) and forward port 8080 to container's port 80
+docker run -d -p 8080:80 --name running-web-server my-web-server:v1
+:Inspect Logs: To check web server access logs and errors:
+  docker logs running-web-server
+  Resource Stats: To monitor CPU, Memory, and Network usage in real-time:
+    docker stats running-web-server
+    Container Inspection: To view low-level configuration details (like IP address):
+    
+      docker inspect running-web-server
+      
