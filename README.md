@@ -77,3 +77,9 @@ Yeh aik advanced Solidity smart contract hai jo users ko apne Ether aik specific
 3. Agar aap 1 minute se pehle `withdraw` par click karenge toh transaction fail ho jayegi.
 4. 1 minute guzarne ke baad click karne par Ether aapke account mein wapas transfer ho jayenge.
 5. 
+git init
+git add README.md
+git commit -m "Docs: Added SEO and Keyword Research Task"
+git remote add origin <YOUR_REPOSITORY_URL>
+git branch -M main
+git push -u origin main
