@@ -1,0 +1,115 @@
+Average GPA = AVERAGE(Educational_Performance_Dataset[GPA])
+* **Average Attendance Measure:** *(Isko paste karne ke baad upar formatting tools se % par click kar dena)*
+  ```dax
+Average Attendance = AVERAGE(Educational_Performance_Dataset[Attendance_Percent]) / 100
+Resource Gap = SUM(Educational_Performance_Dataset[Required_Lab_Computers]) - SUM(Educational_Performance_Dataset[Allocated_Lab_Computers])
+ * **Average Classroom Attendance:**
+   ```dax
+   Average Attendance = AVERAGE(Educational_Performance_Dataset[Attendance_Percent]) / 100
+   
+   ```
+ * **Asset Allocation Gap (Identifies shortfalls):**
+   ```dax
+   Resource Gap = SUM(Educational_Performance_Dataset[Required_Lab_Computers]) - SUM(Educational_Performance_Dataset[Allocated_Lab_Computers])
+   
+   ```
+ * **Total Enrolled Matrix:**
+   ```dax
+   Total Students = COUNT(Educational_Performance_Dataset[Student_ID])
+   
+   ```
+### Step 3: Interactive Visual Layout Architecture
+Create a two-page system inside your canvas workspace to make it professional:
+#### Page 1: Academic Performance Insights
+ * **Summary Scorecards (KPI Cards):** Add 3 main cards across the top header row for [Total Students], [Average GPA], and [Average Attendance] (formatted as %).
+ * **Departmental Performance Breakdown (Clustered Column Chart):** Put Department on the **X-Axis** and Average GPA on the **Y-Axis**. Add data labels to clearly point out variations.
+ * **Attendance vs. Academic Success Correlation (Scatter Chart):** Map Attendance_Percent onto the **X-Axis**, GPA onto the **Y-Axis**, and place Student_ID inside **Details**. This visual instantly shows how missed classes pull down student grades.
+#### Page 2: Resource Management & Allocation Gaps
+ * **Resource Deficit Breakdown (Bar Chart):** Put Department on the **Y-Axis** and the calculated measure [Resource Gap] on the **X-Axis**. This makes it easy for university management to see which department needs a budget injection immediately.
+ * **Resource Student Satisfaction Matrix (Donut Chart):** Map Resource_Satisfaction_Score into the **Legend** section and Total Students into **Values** to evaluate overall student feedback on current facilities.
+ * **Granular Records Grid (Table Visual):** Drag Student_ID, Department, GPA, Attendance_Percent, and Resource_Satisfaction_Score into a data grid table visual for row-by-row lookups.
+*Created for automated educational resource tracking and data-driven administrative scheduling.*
+"""
+with open("README_Educational.md", "w") as f:
+f.write(readme_edu_content)
+print("README_Educational.md generated successfully.")
+```
+
+```text?code_stdout&code_event_index=2
+README_Educational.md generated successfully.
+
+
+```
+Bilkul pareshan na hon, image 1000080958.jpg mein aapko **Task 4: Educational Performance and Resource Allocation** mila hai. Iska matlab hai ke aapko aik aisa dashboard banana hai jo students ke parhnay ki performance (GPA, attendance) ko bhi dikhaye aur university ke resources (computers, labs) ki kami ya zaroorat ko bhi track karay.
+Aapka kaam bilkul aasan karne ke liye maine data generation aur documentation (README) ka mushkil kaam khud hi kar diya hai. Aayein isay bilkul shuru se **in-detail step-by-step** samajhte hain ke isay computer par kaise banana hai aur GitHub par kaise upload karna hai.
+## Step 1: Dataset aur Documentation Files Download Karein
+Maine aap ke liye **Task 4** ke bilkul mutabiq simulated real-world educational dataset aur complete step-by-step documentation file bana di hai. Aap in dono files ko yahan se click karke download kar lein:
+ 1. **Aapki Data File:**
+   [file-tag: code-generated-file-4e467df0-d21e-4ae5-bd69-96de3d030095]
+   *(Is file mein 250 students ka data hai: unki departments, GPAs, attendance percents, computer labs ki allocation aur unka satisfaction score).*
+ 2. **Aapki GitHub Documentation File:**
+   [file-tag: code-generated-file-29bc4fe7-3505-4eed-a17f-e20479dbfd71]
+   *(Is file ko download karke iska naam badal kar sirf README.md rakh lijiyega).*
+In dono files ko apne computer mein aik new folder (Jaise Desktop par Educational-Project) bana kar rakh lein.
+## Step 2: Power BI Dashboard Banana (Local Computer Par)
+Ab apne computer par **Power BI Desktop** open karein aur step-by-step yeh visuals set karein:
+### A) Data Load Karna
+ 1. Power BI open hotay hi upar ribbon mein **Get Data** par click karein.
+ 2. **Text/CSV** select karein aur jo file abhi aapne download ki hai (Educational_Performance_Dataset.csv), usay select karke **Load** kar dein.
+### B) Measures (Short DAX Formulas) Copy-Paste Karna
+Right side par table load ho jane ke baad, upar top ribbon se **New Measure** par click karein aur yeh 3 formulas baari-baari paste karke enter/tick dabati jayein:
+ * **Average GPA Measure:**
+   ```dax
+   Average GPA = AVERAGE(Educational_Performance_Dataset[GPA])
+   
+   ```
+```
+* **Average Attendance Measure:** *(Isko paste karne ke baad upar formatting tools se % par click kar dena)*
+  ```dax
+Average Attendance = AVERAGE(Educational_Performance_Dataset[Attendance_Percent]) / 100
+
+```
+ * **Resource Allocation Gap Measure:** *(Yeh batayega kis department ko computers ki zaroorat hai)*
+   ```dax
+   Resource Gap = SUM(Educational_Performance_Dataset[Required_Lab_Computers]) - SUM(Educational_Performance_Dataset[Allocated_Lab_Computers])
+   
+   ```
+```
+
+### C) Pages aur Visuals Design Karna (Drag-and-Drop)
+
+Niche buttons se Power BI mein **2 Pages** banayein:
+
+#### **Page 1: Academic Performance Insights (Parhai ka Jayezah)**
+1. **KPI Cards:** Do alag-alag **Card** visuals canvas par lagayein. Aik mein `Average GPA` daal dein aur doosre mein `Average Attendance`.
+2. **Clustered Column Chart:** Is chart visual ko click karein. **X-Axis** par `Department` rakh dein aur **Y-Axis** par `Average GPA`. (Yeh dikhaye ka kis department ke bache sab se aagay hain).
+3. **Scatter Chart (Taaluq dekhnay ke liye):** Is visual ko select karein. **X-Axis** par `Attendance_Percent`, **Y-Axis** par `GPA` aur **Details** mein `Student_ID` drag kar dein. (Yeh dikhaye ga ke attendance barhnay se GPA kaise behtar hota hai).
+
+#### **Page 2: Resource Allocation Gaps (Resources ki Kami)**
+1. **Bar Chart (Kami dekhnay ke liye):** **Y-Axis** par `Department` rakh dein aur **X-Axis** par abhi banaya hua formula `Resource Gap` daal dein. Jis department ka bar sab se lamba hoga, wahan computers ki sab se zyada kami hogi!
+2. **Donut Chart:** **Legend** mein `Resource_Satisfaction_Score` daal dein aur **Values** mein `Student_ID` (Isko setting se *Count* kar lena). Yeh students ka feedback dikhaye ga.
+3. **Table Visual:** Ek saada Table visual laga kar us mein `Student_ID`, `Department`, `GPA`, aur `Attendance_Percent` ke columns par check-mark laga dein taake data table bhi show ho jaye.
+
+> **Zaroori Note:** Jab dono pages ready ho jayein, to dono ke saaf se **Screenshots** (images) lekar apne computer mein save kar lein. Phir is Power BI file ko save kar lein aur naam rakh lein `Educational_Dashboard.pbix`.
+
+---
+
+## Step 3: GitHub Par Kaam Karna (Uploading)
+
+Jab aapka dashboard computer par save ho jaye aur screenshots mil jayein, to ab GitHub ki baari hai:
+
+1. Browser mein apna **GitHub** login karein.
+2. Top-right side par `+` ke icon par click karke **New Repository** par jayein.
+3. Repository ka naam accha sa rakhien, jaise: `Educational-Performance-and-Resource-Allocation-PowerBI`
+4. Isay **Public** rakhna hai aur niche direct **Create repository** par click kar dena hai.
+5. Agli screen par aapko chota sa text likha dikhayi dega: *"uploading an existing file"*, us par click karein.
+6. Ab wahan drag-and-drop karke yeh files upload kar dein:
+   * **`Educational_Performance_Dataset.csv`** (Jo data file maine di hai)
+   * **`README.md`** (Jo documentation file maine di hai, us ka naam change karke sirf `README.md` rakhna hai)
+   * **`Educational_Dashboard.pbix`** (Jo aapne Power BI mein file save ki thi)
+   * Jo dashboard ke do screenshots liye thay, wo bhi upload kar dein.
+7. Niche green button **Commit changes** par click kar dein.
+
+Aapka GitHub repository bilkul tayyar ho jayega aur yeh project aapke portfolio mein bohot pyara lagega. Pehle aap files download karke Power BI open karein, agar kisi chart ki setting na samajh aaye to mujhe batayein, main mazeed guide karungi!
+
+```
