@@ -101,4 +101,197 @@ A core Java application designed to input, manage, and analyze student grades. T
    javac GradeTracker.java
 run the application
    java GradeTracker
+# Task 3: Artificial Intelligence Chatbot
+
+A Java-based desktop application implementing an interactive AI Chatbot. The project uses rule-based AI logic and basic Natural Language Processing (NLP) text normalization techniques paired with a clean Graphical User Interface (GUI).
+
+## Core Features
+* **Interactive GUI:** Built using Java Swing (`JFrame`, `JTextArea`, `JTextField`) for real-time text exchange.
+* **Basic NLP Processing:** Text inputs are normalized via case-folding (lowercasing) and regex punctuation removal to analyze intent.
+* **Knowledge Base Rules:** Utilizes a `HashMap` mapping architecture that scans user queries for substring matches to deliver context-aware FAQ answers.
+* **Asynchronous Response Delay:** Simulates human-like thinking delay using a Swing `Timer`.
+
+## Architectural Flow
+1. **Input:** User types a question in the GUI input field.
+2. **NLP Layer:** Punctuation is stripped, and string tokens are evaluated.
+3. **Intent Matcher:** Checks against configured intents ('java', 'nlp', 'help', 'hi', etc.).
+4. **Fallback:** Outputs an intuitive recovery prompt if no high-confidence rule is met.
+
+## Execution Guide
+Compile and run the program using standard Java compiler tools:
+```bash
+javac AIChatbot.java
+java AIChatbot
+
+Image ba0963c4-a82f-4b90-a538-b209dbe059d0 mein **TASK 3: Artificial Intelligence Chatbot** diya gaya hai. Yeh project pichle projects se thoda advanced hai kyunki isme aapko Java ke andar **Natural Language Processing (NLP)** aur **Rule-Based/Machine Learning logic** lagana hai, sath hi ek **GUI interface** bhi dena hai.
+Is task ko core Java ke builtin packages (javax.swing GUI ke liye) aur basic string tokenization (NLP logic ke liye) use karke bohot clean aur self-contained tariqe se banaya ja sakta hai, taake aapko external complex heavy AI libraries install na karni parein.
+Chalein iska pura step-by-step process samajh leti hain:
+## Step 1: Java Code Likhna (AIChatbot.java)
+Aap apne system par ek file banayein **AIChatbot.java** aur usme yeh interactive GUI code likhein. Isme user ke message ko lowercase karke keywords match kiye jate hain (**Rule-based NLP pattern matching**):
+```java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AIChatbot extends JFrame {
+    private JTextArea chatArea;
+    private JTextField inputField;
+    private JButton sendButton;
+    private Map<String, String> knowledgeBase;
+
+    public AIChatbot() {
+        // Title and Layout Setup
+        setTitle("AI Chatbot Assistant");
+        setSize(450, 500);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
+
+        // Initialize FAQ Knowledge Base (Rule-Based Logic)
+        initializeKnowledgeBase();
+
+        // Chat Display Area
+        chatArea = new JTextArea();
+        chatArea.setEditable(false);
+        chatArea.setFont(new Font("Arial", Font.PLAIN, 14));
+        chatArea.setLineWrap(true);
+        chatArea.setWrapStyleWord(true);
+        JScrollPane scrollPane = new JScrollPane(chatArea);
+        add(scrollPane, BorderLayout.CENTER);
+
+        // Bottom Panel for Input
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+        inputField = new JTextField();
+        inputField.setFont(new Font("Arial", Font.PLAIN, 14));
+        sendButton = new JButton("Send");
+        sendButton.setFont(new Font("Arial", Font.BOLD, 14));
+
+        bottomPanel.add(inputField, BorderLayout.CENTER);
+        bottomPanel.add(sendButton, BorderLayout.EAST);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+        // Welcome Message
+        chatArea.append("Bot: Hello! I am your AI Assistant. Ask me anything about our services or type 'bye' to exit.\n\n");
+
+        // Action Listeners
+        ActionListener sendAction = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                processUserMessage();
+            }
+        };
+
+        sendButton.addActionListener(sendAction);
+        inputField.addActionListener(sendAction);
+    }
+
+    private void initializeKnowledgeBase() {
+        knowledgeBase = new HashMap<>();
+        // Training data / Frequently Asked Questions
+        knowledgeBase.put("hello", "Hi there! How can I help you today?");
+        knowledgeBase.put("hi", "Hello! Hope you are doing great. What can I do for you?");
+        knowledgeBase.put("your name", "I am a smart Java-based AI Chatbot assistant.");
+        knowledgeBase.put("help", "Sure! I can answer FAQs, provide project info, or just chat. Ask me away!");
+        knowledgeBase.put("java", "Java is a powerful, object-oriented programming language used widely for building robust apps!");
+        knowledgeBase.put("nlp", "Natural Language Processing (NLP) helps computers understand and process human languages.");
+        knowledgeBase.put("bye", "Goodbye! Have a wonderful day ahead.");
+    }
+
+    private void processUserMessage() {
+        String userText = inputField.getText().trim();
+        if (userText.isEmpty()) return;
+
+        chatArea.append("You: " + userText + "\n");
+        inputField.setText("");
+
+        // Simple Natural Language Processing (Tokenization and Lowercasing)
+        String cleanInput = userText.toLowerCase().replaceAll("[^a-zA-Z0-9 ]", "");
+        String botResponse = generateResponse(cleanInput);
+
+        // Bot typing response with a small delay simulation
+        Timer timer = new Timer(300, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                chatArea.append("Bot: " + botResponse + "\n\n");
+                chatArea.setCaretPosition(chatArea.getDocument().getLength());
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+    }
+
+    private String generateResponse(String input) {
+        // Rule-Based Machine Learning / Matching Logic
+        for (String key : knowledgeBase.keySet()) {
+            if (input.contains(key)) {
+                return knowledgeBase.get(key);
+            }
+        }
+        // Default fallback response if intent is unknown
+        return "I'm sorry, I couldn't completely grasp that. Can you rephrase your question or ask about 'Java', 'NLP', or 'Help'?";
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new AIChatbot().setVisible(true);
+            }
+        });
+    }
+}
+
+```
+### Isko Run Kaise Karein?
+ 1. Open Terminal/CMD: javac AIChatbot.java
+ 2. Run code: java AIChatbot
+ 3. Ek GUI window open ho jayegi jahan aap bot ke sath full chat kar sakti hain. Is pure frame ka aur kuch automated replies ka **screenshot** le lein.
+## Step 2: GitHub Repository Setup
+ 1. GitHub par ek new repository create karein jiska naam **AI-Chatbot-Java** rakh sakti hain.
+ 2. Isko public rakhein aur **Add a README file** select kar lein.
+ 3. AIChatbot.java file ko upload kar dein.
+## Step 3: README.md Documentation Likhna
+Apni repo ki README.md file ko update karein taake evaluator ko pata chale aapne NLP aur rule-based concepts kaise implement kiye hain:
+```markdown
+# Task 3: Artificial Intelligence Chatbot
+
+A Java-based desktop application implementing an interactive AI Chatbot. The project uses rule-based AI logic and basic Natural Language Processing (NLP) text normalization techniques paired with a clean Graphical User Interface (GUI).
+
+## Core Features
+* **Interactive GUI:** Built using Java Swing (`JFrame`, `JTextArea`, `JTextField`) for real-time text exchange.
+* **Basic NLP Processing:** Text inputs are normalized via case-folding (lowercasing) and regex punctuation removal to analyze intent.
+* **Knowledge Base Rules:** Utilizes a `HashMap` mapping architecture that scans user queries for substring matches to deliver context-aware FAQ answers.
+* **Asynchronous Response Delay:** Simulates human-like thinking delay using a Swing `Timer`.
+
+## Architectural Flow
+1. **Input:** User types a question in the GUI input field.
+2. **NLP Layer:** Punctuation is stripped, and string tokens are evaluated.
+3. **Intent Matcher:** Checks against configured intents ('java', 'nlp', 'help', 'hi', etc.).
+4. **Fallback:** Outputs an intuitive recovery prompt if no high-confidence rule is met.
+
+## Execution Guide
+Compile and run the program using standard Java compiler tools:
+```bash
+javac AIChatbot.java
+java AIChatbot
+
+```
+## Production Application Screenshots
+Here is the real-time visual demonstration of the AI conversational window:
+
+*(Yahan apna desktop GUI screenshot drag-and-drop kar sakti hain)*
+```
+
+---
+
+## Step 4: Submission
+
+Sare assets commit karne ke baad, main branch ka URL check karke copy karein aur jahan upload/share karna ho submit kar dein. 
+
+Agar aap knowledge base mein mazeed dynamic FAQs add karna chahti hain ya string handling mein koi confusion ho, to batayein!
+
+```
 
