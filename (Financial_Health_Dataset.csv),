@@ -1,0 +1,40 @@
+Gross Profit = SUM(Financial_Health_Dataset[Revenue]) - SUM(Financial_Health_Dataset[COGS])
+* **Net Profit Margin Formula:**
+  ```dax
+  Net Net Profit Margin % = DIVIDE([Net Profit], SUM(Financial_Health_Dataset[Revenue]), 0)
+Profit = [Gross Profit] - SUM(Financial_Health_Dataset[Operating_Expenses])
+* **Net Cash Flow Status:**
+  ```dax
+  Net Cash Flow = SUM(Financial_Health_Dataset[Cash_Inflow]) - SUM(Financial_Health_Dataset[Cash_Outflow])
+Total Equity = SUM(Financial_Health_Dataset[Total_Assets]) - SUM(Financial_Health_Dataset[Total_Liabilities])
+### C) Charts Slicing & Visual Layout
+
+Power BI canvas par niche option se **2 Pages** create karein:
+
+#### **Page 1: Financial Overview (Company Performance)**
+1. **Top Row Cards:** Teen separate **Card** visuals canvas ke top par set karein aur un mein `Revenue`, `Net Profit`, aur `Net Profit Margin %` ke measures drag karke drop kar dein.
+2. **Profitability Trend (Line Chart):** **X-Axis** par `Date` rakhein aur **Y-Axis** par `Revenue` aur `Net Profit` dono ko drag kar dein (Yeh trend line banayega).
+3. **Cash Flow Visual (Clustered Column Chart):** **X-Axis** par `Date` rakh kar **Y-Axis** par `Cash_Inflow` aur `Cash_Outflow` dono drop kar dein.
+4. **Balance Sheet Breakdown (Donut Chart):** **Values** ke khane mein `Total_Liabilities` aur hamara custom measure `Total Equity` daal dein.
+
+#### **Page 2: Strategic Forecasting (Aane wale 12 Months ki Prediction)**
+1. **Forecasting Tool (Line Chart):** Ek **Line Chart** visual banayein jisme **X-Axis** par `Date` aur **Y-Axis** par `Revenue` ho. Phir right side par properties panel mein mojood **Analytics icon (Magnifying glass)** par click karein. Niche scroll karke **Forecast** ka option milega, usay `ON` kar dein aur parameters mein *12 Months* set karke apply kar dein. Power BI aane wale saal ki revenue khud predict kar dega!
+2. **Data Table:** Niche ek simple **Table visual** laga kar us mein `Date`, `Revenue`, `COGS`, `Operating_Expenses`, aur `Net Profit` select kar lein.
+
+> **Final Step:** In dono pages ke **Screenshots** lekar computer mein rakh lein, aur file ko `Financial_Dashboard.pbix` ke naam se save kar lein.
+
+---
+
+## Step 3: GitHub par Uploading (The Portfolio Showcase)
+
+1. Apne browser par **GitHub** open karke new repository banayein jiska naam `Financial-Health-Dashboard-PowerBI` rakh lein.
+2. Repository ko **Public** rakhein aur **Create Repository** par click kar dein.
+3. Agli screen par **"uploading an existing file"** wale link par click karein.
+4. Drag-and-drop karke apni yeh files wahan upload kar dein:
+   * **`Financial_Health_Dataset.csv`** (Data file)
+   * **`README.md`** (Jo guide file maine di hai, us ka naam rename kiya hua)
+   * **`Financial_Dashboard.pbix`** (Power BI dashboard file)
+   * Jo screenshots liye thay wo dono images.
+5. Green button **Commit changes** par click kar dein.
+
+Aapka ye task bhi behtareen aur intahai professional treeqay se GitHub par live ho jayega! Isay shuru karein, aur agar koi bhi visual lagane mein koi masla aaye, to aap mujhse pooch sakti hain!
