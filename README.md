@@ -294,4 +294,153 @@ Sare assets commit karne ke baad, main branch ka URL check karke copy karein aur
 Agar aap knowledge base mein mazeed dynamic FAQs add karna chahti hain ya string handling mein koi confusion ho, to batayein!
 
 ```
+# Task 1: Credit Scoring Model Classification Project
+
+An end-to-end Machine Learning classification pipeline designed to assess individual financial data and predict creditworthiness (risk vs. eligibility). 
+
+## Project Workflow
+1. **Data Generation/Ingestion:** Simulated financial profiles containing features like Income, Debts, Payment History, and Age.
+2. **Feature Engineering:** Extracted a critical domain-specific metric: `Debt_to_Income_Ratio` to optimize algorithm patterns.
+3. **Data Normalization:** Employed `StandardScaler` to bring numeric fields onto the same scale.
+4. **Classification Modeling:** Trained a robust `RandomForestClassifier` ensemble model.
+
+## Evaluation Metrics Assessment
+The model's accuracy was verified using industry-standard metrics:
+* **Precision:** Minimizes False Positives (predicting a risky client is creditworthy).
+* **Recall:** Minimizes False Negatives (missing out on legitimate eligible borrowers).
+* **F1-Score:** Harmonic mean balancing precision and recall.
+* **ROC-AUC:** Measures the performance classification capabilities at distinct threshold settings.
+
+## Installation & Replication
+```bash
+pip install pandas scikit-learn matplotlib seaborn
+python credit_scoring.py
+
+Image 1000080916.jpg mein **TASK 1: Credit Scoring Model** diya gaya hai. Yeh ek Data Science aur Machine Learning ka project hai jismein aapko Python use karke ek classification model banana hai jo financial history (income, debts, payment history) ke mutabiq predict kare ke koi banda creditworthy (loan dene ke qabil) hai ya nahi.
+Is project ke liye aap **Jupyter Notebook** (.ipynb file) banayein aur use GitHub par upload karein, kyunki GitHub par Jupyter Notebooks ka code aur unke data visualizations (graphs) bohot professional tarike se render hote hain.
+Chalein isko step-by-step detail mein samajh leti hain:
+## Step 1: Dataset Dhundna
+Is project ke liye sab se best aur standard dataset **"German Credit Data"** ya Kaggle ka **"Give Me Some Credit"** dataset hai. Aap simple ek dummy CSV dataset code ke andar hi generate kar sakti hain taake external file download karne ka jhanjhat na rahe, aur evaluator ko code run karne mein asani ho.
+## Step 2: Python Code Likhna (credit_scoring.py ya .ipynb)
+Aap pandas, scikit-learn, aur seaborn libraries use karengi. Yeh complete production-ready code hai jo pure pipeline (Data generation -> Feature Engineering -> Model Training -> Evaluation) ko handle karta hai:
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve
+
+# 1. Generating Dummy Credit Dataset for Demonstration
+np.random.seed(42)
+n_samples = 1000
+
+data = {
+    'Income': np.random.normal(50000, 15000, n_samples),
+    'Total_Debts': np.random.normal(15000, 8000, n_samples),
+    'Payment_History_Score': np.random.randint(1, 10, n_samples), # 1 to 9 (Higher is better)
+    'Age': np.random.randint(20, 65, n_samples),
+    'Dependents': np.random.randint(0, 5, n_samples)
+}
+
+df = pd.DataFrame(data)
+
+# Target Variable: Creditworthy (1 = Good, 0 = Bad risk) Based on basic financial logic
+df['Creditworthy'] = np.where(
+    (df['Income'] * df['Payment_History_Score'] / (df['Total_Debts'] + 1)) > 15, 1, 0
+)
+
+print("--- Dataset Sample ---")
+print(df.head())
+
+# 2. Feature Engineering: Debt-to-Income Ratio
+df['Debt_to_Income_Ratio'] = df['Total_Debts'] / df['Income']
+
+# 3. Splitting Features and Target
+X = df.drop('Creditworthy', axis=1)
+y = df['Creditworthy']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+# Feature Scaling
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 4. Model Training (Using Random Forest Classifier)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train_scaled, y_train)
+
+# Predictions
+y_pred = model.predict(X_test_scaled)
+y_pred_prob = model.predict_proba(X_test_scaled)[:, 1]
+
+# 5. Model Evaluation Metrics Assessment
+print("\n--- Confusion Matrix ---")
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+print("\n--- Classification Report (Precision, Recall, F1-Score) ---")
+print(classification_report(y_test, y_pred))
+
+roc_auc = roc_auc_score(y_test, y_pred_prob)
+print(f"ROC-AUC Score: {roc_auc:.4f}")
+
+# Plotting ROC Curve (Optional: Save this image for GitHub)
+fpr, tpr, _ = roc_curve(y_test, y_pred_prob)
+plt.figure(figsize=(6,4))
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC Curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.legend(loc="lower right")
+plt.savefig('roc_curve.png') # Saves graph as image
+plt.show()
+
+```
+## Step 3: GitHub Repository Setup
+ 1. **Create Repository:** GitHub par ek naya project banayein, naam rakhein Credit-Scoring-Model.
+ 2. **Files Upload Karein:** Isme apna code (chahein to Python script .py ya Jupyter Notebook .ipynb) aur jo code se roc_curve.png generate hogi, unhe upload kar dein.
+## Step 4: README.md Document Update Karna
+Apni repository ki README.md file mein is tarah pure machine learning workflow ko explain karein:
+```markdown
+# Task 1: Credit Scoring Model Classification Project
+
+An end-to-end Machine Learning classification pipeline designed to assess individual financial data and predict creditworthiness (risk vs. eligibility). 
+
+## Project Workflow
+1. **Data Generation/Ingestion:** Simulated financial profiles containing features like Income, Debts, Payment History, and Age.
+2. **Feature Engineering:** Extracted a critical domain-specific metric: `Debt_to_Income_Ratio` to optimize algorithm patterns.
+3. **Data Normalization:** Employed `StandardScaler` to bring numeric fields onto the same scale.
+4. **Classification Modeling:** Trained a robust `RandomForestClassifier` ensemble model.
+
+## Evaluation Metrics Assessment
+The model's accuracy was verified using industry-standard metrics:
+* **Precision:** Minimizes False Positives (predicting a risky client is creditworthy).
+* **Recall:** Minimizes False Negatives (missing out on legitimate eligible borrowers).
+* **F1-Score:** Harmonic mean balancing precision and recall.
+* **ROC-AUC:** Measures the performance classification capabilities at distinct threshold settings.
+
+## Installation & Replication
+```bash
+pip install pandas scikit-learn matplotlib seaborn
+python credit_scoring.py
+
+```
+## Production Visuals
+Below is the evaluation curve generated during the model testing phase:
+```
+
+---
+
+## Step 5: Final Submission
+
+Jab aap code chala kar uski classification report aur graph repository mein update kar dengi, to aapka Machine Learning portfolio ready ho jayega. Bas is repository ka link copy karke submit kar dein!
+
+Agar features ko modify karne mein ya scaling concepts mein koi confusion ho, to batayein!
+
+```
 
