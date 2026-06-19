@@ -605,3 +605,14 @@ Educational Performance and Resource Allocation
 task ,3
 code-generated-file-65798ea6-d249-4561-bbac-c8ba2c9e2795]
 [file-tag: code-generated-file-a5c3331c-f023-4ff5-92be-a661c32ad953]
+# Task 4: Basic Rule-Based Chatbot
+
+## Project Objective
+The goal of this project is to build a simple rule-based chatbot using Python. It interacts with users by taking conversational text inputs and providing predefined replies based on standard keyword matching.
+
+## Key Programming Concepts Used
+* **Functions:** Organized inside a clean, reusable execution block.
+* **Loops:** Implemented a while True loop to keep the conversation going.
+* **Conditional Statements (if-elif-else):** Used to check user inputs.
+* **Input/Output:** Handled dynamic user communication using input() and print().
+* 
