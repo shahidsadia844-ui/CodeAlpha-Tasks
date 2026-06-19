@@ -579,6 +579,17 @@ The following spectrogram displays the extracted acoustic feature matrix fed int
 ```
 
 ---
+# Task 2: Case Study – Industrial Drug Formulation (Tablet Dosage Form)
+
+This repository hosts a comprehensive engineering case study focusing on the industrial formulation process, chemical excipients, processing parameters, and mechanical stability challenges involved in producing solid oral dosage forms (Tablets).
+
+## Repository Deliverables
+* **[Click Here to Open/Download the Complete Presentation PDF](./YOUR_UPLOADED_FILE_NAME.pdf)** *(Yahan file upload karne ke baad uska exact naam link kar dein)*
+
+## Executive Summary of the Presentation
+* **Selected Form:** Compressed Oral Tablet using Paracetamol (500mg) as the model API.
+* **Methodology Analysed:** Industrial Wet Granulation Workflow (Sifting $\rightarrow$ Binder Induction $\rightarrow$ Fluidized Bed Drying $\rightarrow$ Rotary Compacting).
+* **Core Engineering Focus:** Investigating mechanisms behind common factory production defects such as capping, lamination, and content uniformity variation.
 
 ## Step 6: Final Submission
 
