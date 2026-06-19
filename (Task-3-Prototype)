@@ -1,0 +1,42 @@
+# Task 3: IoT Prototype - Motion Detection Alarm System
+
+## Project Overview
+This repository contains an IoT prototype simulation for a Motion Detection Alarm System designed using Arduino. The system detects any movement within the sensor's range and triggers an audible alarm (Buzzer) and visual alert (LED).
+
+## System Architecture & Circuit Diagram
+Below is the circuit setup designed in Tinkercad:
+
+![Circuit Diagram](path/to/your/circuit-screenshot.png)
+
+## Hardware/Components Simulated
+* Arduino Uno R3
+* PIR Motion Sensor
+* Piezo Buzzer
+* Red LED & 220Ω Resistor
+
+## Source Code
+The system is programmed using C++ (Arduino IDE compatible):
+```cpp
+// (Yahan upar diya gaya code paste karein)
+
+
+# Task 3: IoT Prototype - Motion Detection Alarm System
+
+## Project Overview
+This repository contains an IoT prototype simulation for a Motion Detection Alarm System designed using Arduino. The system detects any movement within the sensor's range and triggers an audible alarm (Buzzer) and visual alert (LED).
+
+## System Architecture & Circuit Diagram
+Below is the circuit setup designed in Tinkercad:
+
+![Circuit Diagram](path/to/your/circuit-screenshot.png)
+
+## Hardware/Components Simulated
+* Arduino Uno R3
+* PIR Motion Sensor
+* Piezo Buzzer
+* Red LED & 220Ω Resistor
+
+## Source Code
+The system is programmed using C++ (Arduino IDE compatible):
+```cpp
+// (Yahan upar diya gaya code paste karein)
