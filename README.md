@@ -83,3 +83,22 @@ git commit -m "Docs: Added SEO and Keyword Research Task"
 git remote add origin <YOUR_REPOSITORY_URL>
 git branch -M main
 git push -u origin main
+# Task 1: Student Grade Tracker
+
+A core Java application designed to input, manage, and analyze student grades. The application tracks individual scores, presents a complete summary report, and automatically calculates performance metrics.
+
+## Features
+* **Dynamic Data Storage:** Uses Java `ArrayList` to dynamically handle any number of student records.
+* **Statistical Analysis:** Calculates the class average, highest scoring student, and lowest scoring student.
+* **Input Validation:** Restricts grade entry between 0 and 100 to maintain data integrity.
+* **Formatted Console Report:** Outputs a structured text-based summary report.
+
+## How to Run
+1. Clone this repository:
+```bash
+   git clone [https://github.com/YOUR_USERNAME/Student-Grade-Tracker.git](https://github.com/YOUR_USERNAME/Student-Grade-Tracker.git)
+
+   javac GradeTracker.java
+run the application
+   java GradeTracker
+
