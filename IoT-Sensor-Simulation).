@@ -1,0 +1,41 @@
+# Task 2: Sensor-Based IoT Simulation
+
+## Project Description
+This project is an IoT-based simulation that uses a sensor to control an output device (LED) based on environmental inputs.
+
+## Components Used
+* Arduino Uno
+* LDR (Light Dependent Resistor) / Temperature Sensor
+* LED
+* 220 ohm Resistor
+* Connecting Wires
+
+## Circuit Diagram / Simulation Screenshot
+![Simulation Screenshot](path/to/your/screenshot.png) 
+*(Yahan apne screenshot ka link dein ya image draft mein drag-and-drop kar dein)*
+
+## Source Code
+```cpp
+// Example Arduino Code
+const int sensorPin = A0; 
+const int ledPin = 13;
+int sensorValue = 0;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin);
+  Serial.println(sensorValue);
+  
+  // Logic: Turn on LED if it's dark (low sensor value for LDR)
+  if (sensorValue < 500) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+  delay(100);
+}
+
