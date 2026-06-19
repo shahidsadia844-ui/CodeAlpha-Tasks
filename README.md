@@ -1,4 +1,19 @@
-# CodeAlpha Backend Development Tasks 🚀
+# Task 1: Basic Hangman Game
+
+## Project Objective
+The goal of this project is to create a simple text-based Hangman game in Python. The player tries to guess a hidden word by entering one letter at a time, with a restricted number of allowed incorrect attempts.
+
+## Key Programming Concepts Used
+* **Random Module:** Used `random.choice()` to pick a random secret word from a predefined list.
+* **Loops:** Used a `while` loop to maintain the continuous state of the game until the user wins or loses.
+* **Conditional Logic:** Implemented `if-else` blocks to validate inputs and track remaining life points.
+* **Data Structures:** Used `lists` to store predefined words and track the letters guessed by the player.
+
+## Game Rules
+1. The program selects a random word containing hidden letters (`_`).
+2. The user has a maximum of 6 incorrect guesses allowed.
+3. Guessing a correct letter reveals its position in the word without reducing the attempt count.
+4. # CodeAlpha Backend Development Tasks 🚀
 
 This repository contains backend projects completed during the CodeAlpha Internship using Python Flask and SQLite.
 
