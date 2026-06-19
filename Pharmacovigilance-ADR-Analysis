@@ -1,0 +1,53 @@
+# Pharmacovigilance & Adverse Drug Reaction (ADR) Analysis Report
+
+* **Selected Compound:** Aspirin (Acetylsalicylic Acid)
+* **DrugBank ID:** DB00945
+* **Therapeutic Class:** Non-Steroidal Anti-Inflammatory Drug (NSAID), Antiplatelet agent
+
+---
+
+## 1. Mechanism of Action (MoA)
+
+Aspirin acts as an irreversible inhibitor of the cyclooxygenase enzymes (**COX-1** and **COX-2**). 
+
+### Biochemical Pathway:
+* **Enzyme Acetylation:** Aspirin acetylates a specific serine residue (Serine 529 in COX-1 and Serine 516 in COX-2) near the active site. This permanently blocks the channel, preventing arachidonic acid from accessing the catalytic center.
+* **Prostaglandin Suppression:** By inactivating COX-2, it suppresses the synthesis of prostaglandins ($PGE_2$), reducing baseline inflammation, pyrexia (fever), and pain signaling.
+* **Antiplatelet Action:** By inactivating COX-1 in blood platelets, it blocks the production of **Thromboxane A2 ($TXA_2$)**, a powerful promoter of platelet aggregation. Since platelets lack nuclei, they cannot synthesize new enzymes; the antiplatelet effect persists for the lifetime of the platelet (7–10 days).
+
+---
+
+## 2. Reported Adverse Drug Reactions (ADRs)
+Data aggregated from the **World Health Organization (WHO) VigiBase** and the **DrugBank Database** highlights the following validated adverse drug reactions:
+
+| Organ System | Adverse Reaction (ADR) | Severity | Underlying Mechanism |
+| :--- | :--- | :--- | :--- |
+| **Gastrointestinal (GI)** | Gastric Ulceration, Mucosal Bleeding | High | Systemic inhibition of protective prostaglandins ($PGE_2$ and $PGI_2$) in the gut mucosa, decreasing gastric mucus secretion. |
+| **Hematologic** | Prolonged Bleeding Time, Hemorrhage | Moderate to High | Irreversible inhibition of Thromboxane $A_2$ synthesis leading to decreased platelet aggregation. |
+| **Renal** | Acute Kidney Injury (AKI), Fluid Retention | Moderate | Blocking renal prostaglandins lowers renal perfusion and glomerular filtration rate (GFR). |
+| **Respiratory** | Aspirin-Exacerbated Respiratory Disease (AERD) | Rare but Severe | Shunting of arachidonic acid to the lipoxygenase (LOX) pathway, causing overproduction of bronchoconstrictive leukotrienes. |
+| **Hepatic / Systemic** | Reye's Syndrome | Critical (Pediatric) | Mitochondrial injury triggered during concurrent viral infection in children. |
+
+---
+
+## 3. Risk Minimization & Mitigation Measures
+
+To maximize safety profiles during ongoing therapeutic cycles, the following evidence-based clinical measures are deployed:
+
+### A. Gastrointestinal Protection
+* **Proton Pump Inhibitors (PPIs):** Concomitant prescription of PPIs (e.g., Omeprazole) decreases gastric acid outputs, protecting exposed luminal walls.
+* **Enteric-Coated Formulations:** Utilizing enteric-coated tablets avoids direct local release within the stomach environment, shifting dissolution to the small intestine.
+
+### B. Patient Stratification & Screening
+* **Pediatric Contraindication:** Absolute restriction of Aspirin in children and adolescents recovering from influenza or varicella to eliminate the risk of Reye's Syndrome.
+* **Pre-Surgical Cessation:** Mandating cessation of elective low-dose Aspirin regimens 7 to 10 days prior to major surgical interventions to reset functional platelet counts.
+
+### C. Biomarker and Renal Monitoring
+* Regular monitoring of serum creatinine and Glomerular Filtration Rate (GFR) in elderly populations or patients with chronic kidney disease (CKD) to check renal processing safety.
+
+---
+
+## 4. References & Database Attribution
+1. **DrugBank Online:** Complete Profile for Acetylsalicylic Acid (DB00945) - [https://go.drugbank.com/drugs/DB00945](https://go.drugbank.com/drugs/DB00945)
+2. **WHO Collaborating Centre for International Drug Monitoring (Uppsala Monitoring Centre):** VigiBase Global Safety Data Insights.
+3. *Goodman & Gilman's: The Pharmacological Basis of Therapeutics*, 13th Edition. Chapter on Analgesic-Antipyretic and Anti-inflammatory Agents.
