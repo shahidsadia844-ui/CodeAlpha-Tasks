@@ -665,4 +665,49 @@ This repository contains the full engineering project proposal for integrating A
 - **Comprehensive 3-Tier Architecture:** Complete breakdown of Sensors (LiDAR/Vision), AI Brain (YOLO Object Detection), and Actuators.
 - **Advanced Navigation Algorithms:** Math and analysis of A* (A-Star) and Dijkstra's path planning algorithms.
 - **Real-world Applications:** Study on Warehouse Automation, Delivery Drones, and Smart Agriculture.
+- Task 2
+- 
+- AI_Autonomous_Robotics_Proposal_Report.pdf
+- 
+https://drive.google.com/file/d/1hBt2790vQXLrbu-8r7mtaiwDH_5SceUE/view?usp=drivesdk
+# 🤖 Advanced Robotics and Automation Academic Portfolio
+
+Welcome to my official academic repository for the Robotics and Automation coursework. This repository hosts comprehensive engineering proposals, financial trends research, and advanced application reports.
+
+---
+
+## 📂 Project Directory & Deliverables
+
+### 📐 1. Engineering Design: Robotic Arm Simulation (Task 2)
+- **Topic:** Kinematic modeling, Degrees of Freedom (DOF) mapping, and D-H parametric baseline for a 5-axis articulated robotic arm performing a pick-and-place sequence.
+- **Format:** Technical Design Report with structural joint configuration.
+- 👉 **[Click Here to Download Full Simulation Report PDF](PASTE_YOUR_NEW_TASK_2_SIMULATION_DRIVE_LINK_HERE)**
+
+---
+
+### 📄 2. Research Report: Robotics Applications in Healthcare (Task 1)
+- **Topic:** Clinical analysis of surgical robotics (da Vinci system) and neuromotor rehabilitation systems (Exoskeletons).
+- **Format:** Comprehensive 1500-2000 Words Academic Blueprint.
+- 👉 **[Click Here to Download Full Research Report PDF](PASTE_YOUR_TASK_1_DRIVE_LINK_HERE)**
+
+---
+
+### 📈 3. Corporate Financial Study: Company Stock Analysis (Task 2 - Finance)
+- **Topic:** Equity research, valuation multiples (P/E ratio), and growth vectors of **Tesla, Inc. (TSLA)**.
+- **Format:** 2-3 Pages Financial Report with core analytical metrics.
+- 👉 **[Click Here to Download Full Stock Analysis PDF](PASTE_YOUR_TASK_2_DRIVE_LINK_HERE)**
+
+---
+
+### 🚀 4. Engineering Mini Project: Intelligent Autonomous Navigation Proposal (Task 4)
+- **Topic:** Integrating Artificial Intelligence algorithms (YOLO Object Detection & A* Path Planning) into autonomous terrestrial platforms.
+- **Format:** 5-6 Pages Structural Systems Design Proposal.
+- 👉 **[Click Here to Download Full Mini Project Proposal PDF](PASTE_YOUR_TASK_4_DRIVE_LINK_HERE)**
+
+---
+
+## 🛠️ Tech Stack & Concepts Explored
+- **CAD/Simulation:** Denavit-Hartenberg (D-H) Parameters, Kinematic Coordinate Mapping, Trajectory Smoothing.
+- **Core Algorithms:** A* (A-Star), Dijkstra, Convolutional Neural Networks (CNNs).
+- **Hardware baselines:** LiDAR, Depth Cameras, Brushed/Brushless Actuators.
 - 
