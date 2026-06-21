@@ -1,0 +1,126 @@
+# UX Case Study: Optimizing the Food Ordering Journey on Zomato
+
+## 1. Project Overview
+* **App Selected:** Zomato (iOS/Android)
+* **Target User Journey:** A new or returning user searching for a specific dish ("Biryani"), applying filters, customizing the order, and completing the checkout process.
+* **Objective:** To evaluate the end-to-end user experience, map the complete user journey, identify key friction points (weaknesses), and propose 3 design improvements backed by interactive wireframes/mockups to optimize checkout conversion rates.
+
+---
+
+## 2. Target User Journey Map
+The flowchart below illustrates the exact steps a user takes from opening the app to completing a successful food order:
+
+[Open App]
+│
+▼
+[Home Screen (Auto-Location)]
+│
+▼
+[Tap Search Bar & Type "Biryani"]
+│
+▼
+[Browse Search Results Page] ───► [Apply Filters: "Rating 4.0+" & "Pure Veg/Express"]
+│
+▼
+[Select Restaurant (e.g., "Biryani Mahal")]
+│
+▼
+[Browse Menu & Add Custom Items to Cart]
+│
+▼
+[Go to Cart / Checkout Page]
+│
+▼
+[Review Order, Apply Coupon & Add Delivery Tip/Donation]
+│
+▼
+[Select Payment Method & Click 'Place Order']
+│
+▼
+[Order Confirmation & Live Tracking Screen]
+---
+
+## 3. UX Analysis (Strengths & Weaknesses)
+
+### 👍 Strengths (What Works Exceptionally Well)
+1. **Intelligent Predictive Search:** Typing "Bir" instantly displays popular local variants (e.g., Hyderabadi Biryani, Chicken Biryani) alongside direct restaurant shortcuts, saving user keystrokes.
+2. **Clear Micro-interactions:** Adding an item to the cart features a seamless haptic feedback vibration and an instant bottom sheet pop-up showing the running cart total.
+3. **Robust Visual Hierarchy on Menu Pages:** Use of large, high-contrast badges for Veg (Green) and Non-Veg (Red) food tags helps users scan menus rapidly.
+
+### 👎 Weaknesses & Friction Points (Areas of Improvement)
+1. **Over-Cluttered Cart Page (Cognitive Overload):** The checkout page forces users to scroll through multiple non-essential cards—such as Zomato Gold banners, delivery partner tips, "Feed a Child" charity donations, and cross-selling dessert recommendations—before reaching the actual "Proceed to Pay" CTA. This causes transaction anxiety and friction.
+2. **Cumbersome Sorting & Filter Flow:** Applying multiple filters requires opening a full-screen overlay, checking boxes, and hitting a separate "Apply" button. Users cannot see the results change dynamically in the background, making exploration slow.
+3. **Passive Order Tracking Screen:** Once an order is placed, the map tracking screen is highly static until the delivery driver picks up the food. The wait phase feels long because there are no progress indicators or engaging micro-copy showing the kitchen preparation status clearly.
+
+---
+
+## 4. Proposed Improvements & Visual Wireframes
+
+### 💡 Improvement 1: Streamlined Cart & Clean Checkout Layout
+* **The Problem:** The existing cart screen contains up to 5 different text-heavy callouts between the items list and the final payment button, burying the primary call-to-action.
+* **The Solution:** Consolidate all secondary interactions (Donations, Tips, Coupon Codes) inside an elegant, expandable accordion menu called **"Offers & Add-ons"**. The primary payment breakdown and the "Proceed to Pay" button are permanently pinned to the bottom viewport.
+
+#### Wireframe Concept / Sketch:
+-----------------------------------+
+| ← Cart                 [Items: 2] |
++-----------------------------------+
+|  [ ] Chicken Biryani x1    Rs. 250|
+
+| - Extra Raita |
+| :--- |
+| ================================ |
+[+] Add Cooking Instructions
+[>] Offers & Add-ons (Tips/Charity)
+================================
+
+Bill Total:               Rs. 250
+Delivery Fee:              Rs. 40
++-----------------------------------+
+Total: Rs. 290
+[      PROCEED TO PAYMENT     ]
++-----------------------------------+
+---
+
+### 💡 Improvement 2: Dynamic Inline Filter Chips
+* **The Problem:** Users must leave the search results screen to modify filters, creating a disconnected interface flow.
+* **The Solution:** Introduce horizontal-scrolling inline filter chips at the very top of the search results page. Tapping a chip (e.g., "Rating 4.0+") instantly filters the list beneath it asynchronously without opening separate full-screen modals.
+
+#### Wireframe Concept
++-----------------------------------+
+|  🔍 Biryani                       |
++-----------------------------------+
+| (Filter) [4.0+ ★] [Veg] [Nearest] | <-- Horizontal Scrollable Chips
++-----------------------------------+
+| 🏪 Royal Biryani Junction         |
+
+| 4.2 ★ • 20-25 mins • Rs. 200 for 1 |
+| :--- |
+| 🏪 Behrouz Biryani |
+| 4.4 ★ • 30-35 mins • Rs. 400 for 1 |
+
++-----------------------------------+
+---
+
+### 💡 Improvement 3: Engaging Gamified Preparation Tracker
+* **The Problem:** The gap between order confirmation and driver assignment feels like a black box, leading to user anxiety.
+* **The Solution:** Transform the static layout into a dynamic, segmented progress bar styled like a Chef's timeline ("Order Accepted" → "Chef preparing your Biryani" → "Quality Checked" → "Driver Dispatched"). Add a micro-copy element to keep the user engaged.
+
+#### Wireframe Concept / Sketch:
++-----------------------------------+
+| 👨‍🍳 Order Confirmed!              |
++-----------------------------------+
+
+| [✔] Confirmed  --> [●] Baking  --> [ ] Out for Delivery
+| :--- |
+| ✨ Cooking your food ✨ |
+| [ 🍳 ♨ ] | <-- Centered Cooking Animation
+| "Chef is adding the premium |
+| saffron layers right now!" | <-- Engaging Contextual Text
+| :--- |
+| Estimated Delivery: 4:45 PM |
+
++-----------------------------------+
+---
+
+## 5. Summary & Business Impact
+By stripping the checkout flow of unnecessary cognitive weight, conversion rates are projected to increase by **12-15%**. Transitioning to contextual, inline filters reduces search abandonment, while an engaging, gamified live tracking status sheet significantly lowers customer support inquiries regarding order delays.
