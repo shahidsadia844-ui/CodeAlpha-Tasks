@@ -1,3 +1,5 @@
+
+
 # Task 1: Basic Hangman Game
 
 ## Project Objective
@@ -649,4 +651,18 @@ Surgical robots have revolutionized minimally invasive surgery (MIS). The table 
 ---
 ## 3. References
 1. Smith, J. (2024). *The Future of Robotic Surgery*. IEEE Journal of Medicine, 12(3), 45-52.
-2. Taylor, R. (2025). *Exoskeletons in Modern Rehabilitation*. Robotics and Automation Magazine.
+ Taylor, R. (2025). *Exoskeletons in Modern Rehabilitation*. Robotics and Automation Magazine.
+Task 4:
+Mini Project – Robotics/Automation Proposal
+# 📄 [Click Here to Read Full Project Proposal PDF](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)
+
+# 📄 [Click Here to Read Full Project Proposal PDF](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)
+
+## Project Overview
+This repository contains the full engineering project proposal for integrating Artificial Intelligence (AI) algorithms into Autonomous Navigation Mobile Robots. 
+
+### Key Highlights of the Report:
+- **Comprehensive 3-Tier Architecture:** Complete breakdown of Sensors (LiDAR/Vision), AI Brain (YOLO Object Detection), and Actuators.
+- **Advanced Navigation Algorithms:** Math and analysis of A* (A-Star) and Dijkstra's path planning algorithms.
+- **Real-world Applications:** Study on Warehouse Automation, Delivery Drones, and Smart Agriculture.
+- 
