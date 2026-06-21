@@ -630,4 +630,23 @@ The goal of this project is to build a simple rule-based chatbot using Python. I
 * **Loops:** Implemented a while True loop to keep the conversation going.
 * **Conditional Statements (if-elif-else):** Used to check user inputs.
 * **Input/Output:** Handled dynamic user communication using input() and print().
-* 
+
+
+# Research Report: Robotics in Healthcare (Surgical & Rehabilitation Systems)
+## 1. Abstract
+This research report explores the profound impact of robotics in modern healthcare...
+---
+## 2. Surgical Robotics (The da Vinci System)
+Surgical robots have revolutionized minimally invasive surgery (MIS). The table below compares Traditional Surgery vs. Robotic Surgery:
+
+| Feature | Traditional Surgery | Robotic Surgery |
+| :--- | :--- | :--- |
+| **Precision** | Limited to human hand stability | High (Tremor filtration) |
+| **Incision Size** | Large incisions required | Micro-incisions (Keyhole) |
+| **Recovery Time** | Weeks to Months | Days |
+
+> **Key Note:** The da Vinci Surgical System allows surgeons to operate with 3D high-definition views and robotic arms that rotate far beyond the capabilities of a human wrist.
+---
+## 3. References
+1. Smith, J. (2024). *The Future of Robotic Surgery*. IEEE Journal of Medicine, 12(3), 45-52.
+2. Taylor, R. (2025). *Exoskeletons in Modern Rehabilitation*. Robotics and Automation Magazine.
