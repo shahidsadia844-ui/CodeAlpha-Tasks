@@ -1,4 +1,4 @@
-
+w
 
 # Task 1: Basic Hangman Game
 
@@ -710,4 +710,37 @@ Welcome to my official academic repository for the Robotics and Automation cours
 - **CAD/Simulation:** Denavit-Hartenberg (D-H) Parameters, Kinematic Coordinate Mapping, Trajectory Smoothing.
 - **Core Algorithms:** A* (A-Star), Dijkstra, Convolutional Neural Networks (CNNs).
 - **Hardware baselines:** LiDAR, Depth Cameras, Brushed/Brushless Actuators.
+- # 🤖 Advanced Engineering and Financial Academic Portfolio
+
+Welcome to my official academic repository for my dual-disciplinary coursework. This repository hosts comprehensive engineering proposals, financial trends research, and market infrastructure studies.
+
+---
+
+## 📂 Project Directory & Deliverables
+
+### 📄 1. Financial Markets: Stock Market Basics Research Report (Task 1)
+- **Topic:** Structural mapping of capital markets, primary vs. secondary liquidity vectors, and the statutory role of SEBI in India.
+- **Format:** Comprehensive Academic Research Report (800-1000 words).
+- 👉 **[Click Here to Download Full Stock Market Report PDF](PASTE_YOUR_TASK_1_STOCK_MARKET_DRIVE_LINK_HERE)**
+
+---
+
+### 📐 2. Engineering Design: Robotic Arm Simulation (Task 2)
+- **Topic:** Kinematic modeling, Degrees of Freedom (DOF) mapping, and D-H parametric baseline for a 5-axis articulated robotic arm performing a pick-and-place sequence.
+- **Format:** Technical Design Report with structural joint configuration.
+- 👉 **[Click Here to Download Full Simulation Report PDF](PASTE_YOUR_TASK_2_SIMULATION_DRIVE_LINK_HERE)**
+
+---
+
+### 📈 3. Corporate Financial Study: Company Stock Analysis (Task 2 - Finance)
+- **Topic:** Equity research, valuation multiples (P/E ratio), and growth vectors of **Tesla, Inc. (TSLA)**.
+- **Format:** Financial Evaluation Report.
+- 👉 **[Click Here to Download Full Stock Analysis PDF](PASTE_YOUR_TASK_2_TESLA_FINANCE_DRIVE_LINK_HERE)**
+
+---
+
+### 🚀 4. Engineering Mini Project: Intelligent Autonomous Navigation Proposal (Task 4)
+- **Topic:** Integrating Artificial Intelligence algorithms (YOLO Object Detection & A* Path Planning) into autonomous terrestrial platforms.
+- **Format:** 5-6 Pages Structural Systems Design Proposal.
+- 👉 **[Click Here to Download Full Mini Project Proposal PDF](PASTE_YOUR_TASK_4_NAVIGATION_DRIVE_LINK_HERE)**
 - 
