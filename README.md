@@ -883,6 +883,28 @@ A clear analysis of digital product workflows shows that long-term user retentio
 
 Moving away from cluttered checkout layouts, high-cost search filters, and uninformative wait screens directly helps users achieve their goals faster. This user-centric approach ultimately drives key business metrics, stabilizing conversion rates and fostering lasting brand loyalty in highly competitive digital marketplaces.
 
+# Task 1: Wireframing & Low-Fidelity Design Document (E-Commerce Platform Architecture)
+
+---
+
+## 1. Project Specifications & Architectural Scope
+
+### 1.1 Intent of the Document
+This engineering document provides the foundational low-fidelity wireframes and structural blueprint layouts for an enterprise-grade mobile **E-Commerce Platform**. The primary objective is to define the visual hierarchy, content placement vectors, and user navigation loops before introducing brand colors, visual design systems, or final user interface (UI) assets.
+
+---
+
+## 2. Official Figma Submission Link
+
+As per the evaluation criteria, the interactive low-fidelity layouts and structural component libraries have been compiled and hosted within the Figma interface workspace repository. You can access and inspect the live wireframe blueprints via the active direct link below:
+
+👉 **[CLICK HERE TO VIEW LIVE WIREFRAMES IN FIGMA](https://www.figma.com/files/recent)**
+
+---
+
+## 3. Screen-by-Screen Layout Architecture (ASCII Schematics)
+
+### 📱 Screen 1: The Centralized Commerce Landing Hub (Homepage)
 
 
 
